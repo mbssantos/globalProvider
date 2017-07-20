@@ -5,8 +5,9 @@
   "main": "dist/global-provider.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack/webpack.config.js",
-    "build-dev": "webpack --config webpack/webpack.config.js",
+    "build": "webpack --config webpack/webpack.config.prod.js",
+    "build-dev": "webpack --config webpack/webpack.config.dev.js",
+    "prepublish": "npm run build",
     "lint": "eslint --fix --ext js,jsx ./"
   },
   "repository": {
