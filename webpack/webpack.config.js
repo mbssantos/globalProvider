@@ -5,10 +5,11 @@ const EXCLUDE = (/node_modules/);
 
 const config = {
   entry: {
-    "global-provider": "./global-provider.jsx"
+    "global-provider": "./index.js"
   },
   output: {
-    path: path.join(__dirname, "../dist/"),
+    libraryTarget: "amd",
+    path: path.join(__dirname, "../dist"),
     filename: "[name].js"
   },
   module: {
@@ -17,23 +18,10 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js", ".jsx"]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production"),
-        SMA_API_URL: JSON.stringify("https://api.socialmedia.eon.com")
-      }
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      compress: {
-        warnings: false,
-        drop_console: true
-      }
-    })
+    new webpack.optimize.OccurrenceOrderPlugin()
   ]
 };
 

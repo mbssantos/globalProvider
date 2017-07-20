@@ -20,10 +20,10 @@ const updateStore = () => {
 };
 
 const addReducer = (reducer) => {
-  GLOBAL_STORE.reducers = Object.assign({}, GLOBAL_STORE.reducers, reducer);
+  GLOBAL_STORE.reducers = Object.assign({}, GLOBAL_STORE.reducers || {}, reducer);
 };
 
-const GlobalStoreService = {
+const GlobalStore = {
   getStore(reducer = null) {
     if (reducer) {
       addReducer(reducer);
@@ -37,4 +37,4 @@ const GlobalStoreService = {
   }
 };
 
-export default GlobalStoreService;
+export default GlobalStore;
