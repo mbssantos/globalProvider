@@ -2,7 +2,7 @@
   "name": "global-provider",
   "version": "1.0.0",
   "description": "Global Provider for react-redux apps",
-  "main": "index.js",
+  "main": "global-provider.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack/webpack.config.js",

@@ -5,7 +5,7 @@ const EXCLUDE = (/node_modules/);
 
 const config = {
   entry: {
-    globalProvider: "./index.jsx"
+    "global-provider": "./global-provider.jsx"
   },
   output: {
     path: path.join(__dirname, "../dist/"),
