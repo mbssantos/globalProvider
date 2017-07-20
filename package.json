@@ -1,0 +1,46 @@
+{
+  "name": "global-provider",
+  "version": "1.0.0",
+  "description": "Global Provider for react-redux apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack/webpack.config.js",
+    "lint": "eslint --fix --ext js,jsx ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbssantos/globalProvider.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Martinho Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbssantos/globalProvider/issues"
+  },
+  "homepage": "https://github.com/mbssantos/globalProvider#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "webpack": "^3.3.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

@@ -1,2 +1,2 @@
 # globalProvider
-Global Store for partial redux Apps
+Global store for redux Apps

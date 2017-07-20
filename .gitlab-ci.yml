@@ -1,0 +1,60 @@
+variables:
+  DOCKER_DRIVER: overlay
+
+services:
+- docker:dind
+
+stages:
+  - Environment preparation
+  - Test
+  - Build
+
+npm install:
+  image: node:8.1.2
+  stage: Environment preparation
+  script:
+      - npm i
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules/
+
+Eslint:
+  image: node:8.1.2
+  stage: Test
+  script:
+      - npm run lint-ci
+
+Unit tests:
+  image: node:8.1.2
+  stage: Test
+  script:
+      - npm run test
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - coverage/
+
+Production build:
+  image: node:8.1.2
+  stage: Build
+  script:
+      - npm run build-prod
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - public/
+  except:
+    - /^feature_.*$/
+
+Dev build:
+  image: node:8.1.2
+  stage: Build
+  script:
+      - npm run build-dev
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - public/
+  only:
+    - /^feature_.*$/
