@@ -1,6 +1,6 @@
 {
   "name": "global-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global Provider for react-redux apps",
   "main": "global-provider.js",
   "scripts": {
